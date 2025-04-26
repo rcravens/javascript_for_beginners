@@ -2,40 +2,44 @@
 
 // What is Recursion?
 //  - function calls itself
+//  - needs an exit point
 
-// Examples
-
+// Examples:
 
 // Count Down Timer
 // 5 --> 4 --> 3 --> 2 --> 1 --> blast off
 console.log('------------ COUNT DOWN -----------------');
 
 function countdown(n) {
-    if (n < 1) {
+
+    if (n === 0) {
         console.log('blast off');
         return;
     }
+
     console.log(n);
+
     countdown(n - 1);
 }
 
 countdown(5);
 
-
 // Factorial
 // 4! = 4 x 3 x 2 x 1 = 24
-// 4! = (4) x 3! = (4 x 3) x 2! = (4 x 3 x 2) x 1!
+// 4! = (4) x 3! = (4x3) x 2! = (4x3x2) x 1!
 console.log('------------ FACTORIAL -----------------');
 
 function factorial(n) {
     if (n === 1) {
         return 1;
     }
-    return n * factorial(n - 1)
+
+    return n * factorial(n - 1);
 }
 
 let answer = factorial(4);
 console.log('4!=', answer);
+
 
 // Sort
 // [9, 8, 7, 6, 5], 5 elements
@@ -51,13 +55,12 @@ function my_sort(arr, n) {
         return;
     }
 
-    for (let i = 0; i < n - 1; i++) {
+    for (let i = 0; i < n; i++) {
         if (arr[i] > arr[i + 1]) {
-            // destructuring
+            // destructuring syntax
             [arr[i], arr[i + 1]] = [arr[i + 1], arr[i]];
         }
     }
-
     my_sort(arr, n - 1);
 }
 

@@ -5,34 +5,40 @@
 //  - return functions as result
 
 // Functions as Arguments / Parameters
+const numbers = [1, 2, 3, 4, 5];
+const result = numbers.map(function (val) {
+    return val * 2;
+});
+console.log(numbers, result);
 
-// const numbers = [1, 2, 3, 4];
-// const result = numbers.map(function (number) {
-//     return number * 2;
-// });
-// console.log(numbers, result);
-//
-// const words = ['short', 'medium', 'extra-long'];
-// const result2 = words.filter(function (w) {
-//     return w.length > 5;
-// });
-// console.log(words, result2);
+const words = ['a', 'aa', 'aaa', 'aaaa', 'aaaaa', 'aaaaaa'];
+const long_words = words.filter(function (word) {
+    return word.length > 3;
+});
+console.log(words, long_words);
 
 // Functions as Return Values
+function custom_greeting(greeting) {
+    return function (name) {
+        console.log(`${greeting}, ${name}!`);
+    }
+}
 
-// function custom_greeting(greeting) {
-//     return function (name) {
-//         console.log(`${greeting}, ${name}!`);
-//     }
-// }
-//
-// const hello = custom_greeting('Hello');
-// const howdy = custom_greeting('Howdy');
-// const hey = custom_greeting('Hey');
-//
-// hello('Bob');
-// howdy('Ted');
-// hey('Dana');
+const hello = custom_greeting('Hello');
+const howdy = custom_greeting('Howdy');
+const hey = custom_greeting('Hey');
+
+hello('Bob');
+howdy('Ted');
+hey('Dana');
+
+
+// Practical Example: Pub/Sub
+//  - subscribe to events (e.g., login)
+//      - event_name, callback
+//  - publish event when it happens
+//      - event_name, event_data
+//      - execute callback functions subscribed to event
 
 function create_pub_sub() {
     const subscribers = {};
@@ -46,7 +52,6 @@ function create_pub_sub() {
         },
         publish(event_name, data) {
             const event_subs = subscribers[event_name] || [];
-
             event_subs.forEach(function (callback) {
                 callback(event_name, data);
             })
@@ -56,9 +61,6 @@ function create_pub_sub() {
 
 const pub_sub = create_pub_sub();
 
-// console.log(pub_sub);
-
-
 function handle_user_login(evt, data) {
     console.log('handle_user_login', evt, data);
 }
@@ -67,14 +69,18 @@ function analytics(evt, data) {
     console.log('analytics', evt, data);
 }
 
-function login() {
-    // after login
-    pub_sub.publish('login', {user_id: 5})
+function logging(evt, data) {
+    console.log('logging', evt, data);
 }
 
+pub_sub.subscribe('login', logging);
 pub_sub.subscribe('login', handle_user_login);
-pub_sub.subscribe('login', analytics);
+pub_sub.subscribe('login', analytics)
+
+
+function login() {
+    pub_sub.publish('login', {user_id: 5});
+}
 
 login();
-
-
+// console.log(pub_sub);

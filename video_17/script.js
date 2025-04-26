@@ -1,8 +1,13 @@
 // Script instructions go here!!!
 
 // Why?
+//  - JavaScript stops execution when an unhandled error occurs
+//  - Allows the developer choices (notify user, carry on with limited features)
 
 // When?
+//  - Limited Resources
+//  - Network Calls (api, database, ...)
+//  - Code that "Throws" (your own, modules, libraries...)
 
 // try/catch
 // const a = 5;
@@ -11,39 +16,46 @@
 // try {
 //     c = a / b;
 // } catch (e) {
-//     console.log('CATCH', e.toString());
+//     console.log(e.toString());
 // }
-//
 // console.log(a, c);
 
+// Throwing your own errors
+function sketchy_function() {
+    if (Math.random() < 0.5) {
 
-function sketch_function() {
-    if (Math.random() > 0.5) {
-        throw new Error('Sketchy Function Failed');
+        const random_choice = Math.floor(Math.random() * 3);
+
+        switch (random_choice) {
+            case 0:
+                throw new TypeError('Sketch Function Failed');
+            case 1:
+                throw new ReferenceError('Sketch Function Failed')
+            default:
+                throw new Error('Sketchy Function Failed');
+        }
+
     }
 }
 
-// try {
-//     sketch_function();
-// } catch (e) {
-//     if (e instanceof TypeError) {
-//         console.log('CATCH INSTANCE TYPE ERROR', e.toString());
-//     } else if (e instanceof ReferenceError) {
-//         console.log('CATCH INSTANCE REFERENCE ERROR', e.toString());
-//     } else {
-//         console.log('CATCH ', e.toString());
-//     }
-// }
-
 // try/catch/finally
+console.log('outside');
 try {
-    console.log('BEFORE');
-    sketch_function();
-    console.log('AFTER');
+    console.log('just before');
+    sketchy_function()
+    console.log('just after');
 } catch (e) {
-    console.log('CATCH ', e.toString());
+    console.log('inside catch');
+    console.log(e.toString());
+    if (e instanceof TypeError) {
+        console.log('special type error code');
+    } else if (e instanceof ReferenceError) {
+        console.log('special reference error code');
+    }
 } finally {
-    console.log('FINALLY');
+    console.log('inside finally');
 }
+console.log('here we are');
 
-// Throwing your own errors
+
+

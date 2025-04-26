@@ -1,69 +1,48 @@
 // Script instructions go here!!!
 
-// Lexical Scope
+// What is a closure?
+//  - A closure is the combination of a function bundled together (enclosed)
+//      with references to its surrounding state (lexical environment / scope).
+//  - This means that a closure can "remember" and continue to access
+//      variables from its parent or outer scope, even when the parent scope
+//      is no longer active
 
-let global_var = 'GLOBAL';
-console.log(global_var);
+// What is Lexical Scope? and Closure Examples
 
-function test() {
-    let function_var = 'FUNCTION';
-    console.log(global_var);
-    console.log(function_var);
-}
+// Global function
+console.log('---------------------- greet');
 
-// console.log(function_var);
-
-if (1 + 3 > 2) {
-    let block_var = 'BLOCK';
-    console.log(global_var);
-    // console.log(function_var);
-    console.log(block_var);
-}
-
-// console.log(block_var);
-
-function math() {
-    let pi = 3.14;
-
-    function area_of_circle(radius) {
-        return pi * radius ** 2;
-    }
-
-    let area = area_of_circle(2);
-    console.log('area', area);
-}
-
-math();
-
-
-// Closures
 function greet(name) {
+    // name - Function scope
+
+    // say_hello() is an inner function that forms a closure
     return function () {
-        console.log(`Hello ${name}!`);
+        console.log(`Hello, ${name}!`);
     }
 }
 
+const hi_alice = greet('Alice');
 const hi_bob = greet('Bob');
-const hi_kai = greet('Kai');
 
+hi_alice();
 hi_bob();
-hi_kai();
 
-// Practical Examples
+console.log('---------------------- counter');
 
 function make_counter() {
     let count = 0;
 
     return function () {
         count++;
-        console.log('Count is:', count);
+        console.log('Count is', count);
     }
 }
 
-const counter = make_counter();
-counter();
-counter();
-counter();
+const counter1 = make_counter();
+counter1();
+counter1();
+counter1();
+
 
 const counter2 = make_counter();
 counter2();

@@ -16,5 +16,5 @@ for(let color of colors)
 
 // forEach loop
 colors.forEach(function(element){
-   console.log('forEach', element);
+    console.log('forEach', element);
 });

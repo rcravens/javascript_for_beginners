@@ -39,8 +39,7 @@ extra systems that JavaScript can ask for help.
 // console.log('end');
 
 /****** CALLBACKS: THE ORIGINAL SOLUTION ******/
-
-// ASYNCHRONOUS / NON-BLOCKING
+// // ASYNCHRONOUS / NON-BLOCKING
 // function getUserInfo(id, callback) {
 //     console.log('getting user info....');
 //

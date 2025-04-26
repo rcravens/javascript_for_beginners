@@ -5,49 +5,64 @@
 
 // Examples
 
-// 4! = 4*3*2*1 = 4 * 3! = 4 * 3 * 2!
-function factorial(n) {
-    if (n === 0) {
-        return 1;
-    }
-    return n * factorial(n - 1);
-}
 
-const number = 4;
-const factorial_value = factorial(number);
-console.log('number', number, 'factorial', factorial_value);
-
+// Count Down Timer
+// 5 --> 4 --> 3 --> 2 --> 1 --> blast off
+console.log('------------ COUNT DOWN -----------------');
 
 function countdown(n) {
-    if (n < 0) {
+    if (n < 1) {
+        console.log('blast off');
         return;
     }
-    console.log(n)
+    console.log(n);
     countdown(n - 1);
 }
 
 countdown(5);
 
 
-function my_sort(arr, n = arr.length) {
+// Factorial
+// 4! = 4 x 3 x 2 x 1 = 24
+// 4! = (4) x 3! = (4 x 3) x 2! = (4 x 3 x 2) x 1!
+console.log('------------ FACTORIAL -----------------');
 
+function factorial(n) {
     if (n === 1) {
-        return arr;
+        return 1;
+    }
+    return n * factorial(n - 1)
+}
+
+let answer = factorial(4);
+console.log('4!=', answer);
+
+// Sort
+// [9, 8, 7, 6, 5], 5 elements
+// pass #1(n=5): [9, 8, 7, 6, 5] -> [8, 9, 7, 6, 5] -> [8, 7, 9, 6, 5] -> [8, 7, 6, 9, 5] -> [8, 7, 6, 5, 9]
+// pass #2(n=4): [8, 7, 6, 5, 9] -> [7, 8, 6, 5, 9] -> [7, 6, 8, 5, 9] -> [7, 6, 5, 8, 9]
+// pass #3(n=3): [7, 6, 5, 8, 9] -> [6, 7, 5, 8, 9] -> [6, 5, 7, 8, 9]
+// pass #4(n=2): [6, 5, 7, 8, 9] -> [5, 6, 7, 8, 9]
+// pass #5(n=1): [5, 6, 7, 8, 9]
+console.log('------------ SORT -----------------');
+
+function my_sort(arr, n) {
+    if (n === 1) {
+        return;
     }
 
-    // bubble up the max value to the end of the unsorted part
     for (let i = 0; i < n - 1; i++) {
         if (arr[i] > arr[i + 1]) {
-            // Use destructuring to swap values
+            // destructuring
             [arr[i], arr[i + 1]] = [arr[i + 1], arr[i]];
         }
     }
 
-    // Now we are sorted above n - 1...recursively bubble the next largest
-    return my_sort(arr, n - 1);
+    my_sort(arr, n - 1);
 }
 
-const data = [5, 1, 4, 2, 8];
-const copy = [...data];
-sorted_data = my_sort(copy);
-console.log(data, sorted_data);
+let data = [9, 8, 7, 6, 5];
+let copy = [...data];
+console.log(data);
+my_sort(data, data.length);
+console.log(copy, data);

@@ -17,12 +17,10 @@ const arr = [1, 2, 3, 4, 5];
 
 // - defaults
 // const d = [6];
-//
 // const [e, f] = d;
-// console.log(d, e, f);
-//
+// console.log(e, f, d);
 // const [g = 2, h = 4] = d;
-// console.log(d, g, h);
+// console.log(g, h, d);
 
 // - swapping
 // let x = 11;
@@ -31,14 +29,17 @@ const arr = [1, 2, 3, 4, 5];
 // let z = x;
 // x = y;
 // y = z;
-// console.log(x, y, z);
-
+// console.log(x, y);
+//
 // [x, y] = [y, x];
 // console.log(x, y);
 
 // Spread Syntax:
 // The spread syntax (...) allows you to expand elements of an array
 // (or object) in places where multiple values or elements are expected.
+
+console.log(1, 2, 3, 4, 5);
+console.log(...arr); // ...arr [1, 2, 3, 4, 5] ==> 1, 2, 3, 4, 5
 
 // - copying
 const num = [1, 2, 3];
@@ -52,30 +53,27 @@ console.log(num, copy);
 const copy2 = [...num]; // [1, 2, 3]
 console.log(num, copy2);
 
-console.log(...num);
-console.log(1, 2, 3);
-
 // - combining arrays
 const m = [1, 2, 3];
 const n = [7, 8, 9];
 const combined = [...m, ...n];
-console.log(m, n, combined);
+console.log(combined);
 
 // - spreading into parameters
-function add(a, b) {
-    return a + b;
+function sum(...nums) {
+    let total = 0;
+    for (let num of nums) {
+        total += num;
+    }
+    return total;
 }
 
-const max_val = Math.max(...combined);
-console.log('max', max_val);
+console.log(sum(1, 2, 3));
+console.log(sum(1, 2, 3, 4, 5, 6));
 
 // - spread in destructuring (...rest)
-[s, t] = combined;
-console.log(s, t);
-
-[j, k, ...l] = combined;
-console.log(j, k, l);
-
+const [a, b, ...rest] = arr;
+console.log(a, b, rest, arr);
 
 
 

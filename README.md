@@ -7,9 +7,9 @@ This code supplements the JavaScript for Beginners course that is available on [
 ‼️ What Is Covered?
 
 - What Is JavaScript? [video](https://tekcasts.com/play/what-is-javascript)
-- Hello from JavaScript [code](video_02/index.html) | [video](https://tekcasts.com/play/what-is-javascript)
-- Your First Script [code](video_03/script.js) | [video](https://tekcasts.com/play/what-is-javascript)
-- Variables & Data Types [code](video_04/script.js) | [video](https://tekcasts.com/play/what-is-javascript)
+- Hello from JavaScript [code](video_02/index.html) | [video](https://tekcasts.com/play/setting-up-the-environment)
+- Your First Script [code](video_03/script.js) | [video](https://tekcasts.com/play/your-first-script)
+- Variables & Data Types [code](video_04/script.js) | [video](https://tekcasts.com/play/variables-data-types)
 - Operators & Expressions [code](video_05/script.js) | [video](https://tekcasts.com/play/what-is-javascript)
 - Control Flow - Conditionals [code](video_06/script.js) | [video](https://tekcasts.com/play/what-is-javascript)
 - Control Flow - Loops [code](video_07/script.js) | [video](https://tekcasts.com/play/what-is-javascript)

@@ -18,7 +18,7 @@ This code supplements the JavaScript for Beginners course that is available on [
 - Functions as Values (Intro to Callbacks) [code](video_10/script.js) | [video](https://tekcasts.com/play/javascript-for-beginners-functions-as-values-callbacks)
 - Arrays - Working with Lists [code](video_11/script.js) | [video](https://tekcasts.com/play/javascript-for-beginners-arrays-working-with-lists)
 - Looping Through Arrays [code](video_12/script.js) | [video](https://tekcasts.com/play/javascript-for-beginners-looping-through-arrays)
-- Objects - Key/Value Pairs [code](video_13/script.js) | [video](https://tekcasts.com/play/https://tekcasts.com/play/javascript-for-beginners-what-is-javascript)
+- Objects - Key/Value Pairs [code](video_13/script.js) | [video](https://tekcasts.com/play/javascript-for-beginners-objects-key-value-pairs)
 - Nested Structures and Loops with Objects [code](video_14/script.js) | [video](https://tekcasts.com/play/https://tekcasts.com/play/javascript-for-beginners-what-is-javascript)
 - Destructuring & Spread Syntax [code](video_15/script.js) | [video](https://tekcasts.com/play/https://tekcasts.com/play/javascript-for-beginners-what-is-javascript)
 - Template Literals [code](video_16/script.js) | [video](https://tekcasts.com/play/https://tekcasts.com/play/javascript-for-beginners-what-is-javascript)

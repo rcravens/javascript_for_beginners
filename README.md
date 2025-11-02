@@ -2,7 +2,7 @@
 
 This code supplements the JavaScript for Beginners course that is available on [TekCasts](https://tekcasts.com):
 
-[![IMAGE ALT TEXT HERE](imgs/slides.001.png)](https://tekcasts.com/play/https://tekcasts.com/play/javascript-for-beginners-what-is-javascript)
+[![IMAGE ALT TEXT HERE](imgs/slides.001.png)](https://tekcasts.com/play/javascript-for-beginners-what-is-javascript)
 
 ‼️ What Is Covered?
 
